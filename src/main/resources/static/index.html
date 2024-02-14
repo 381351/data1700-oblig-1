@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        label {
+            display: block;
+        }
+        ul {
+            display: flex;
+            flex-flow: row;
+        }
+    </style>
 </head>
 <body>
+<h1>Bestilling av kinobilletter</h1>
+<form action="kjop()">
+    <label for="filmer">Velg film
+        <select id="filmer">
+            <option value="" name="film">Velg film her</option>
+            <option name="film">Film#1</option>
+            <option name="film">Film#2</option>
+        </select>
+    </label>
+    <div id="filmer-1"></div>
+
+    <label>Antall<input id="antall" type="number" /><span id="antall-1"></span></label>
+
+    <label>Fornavn<input id="fornavn" type="text" /><span id="fornavn-1"></span></label>
+    <label>Etternavn<input id="etternavn" type="text" /><span id="etternavn-1"></span></label>
+    <label>Telefonnr<input id="nr" type="text" /><span id="nr-1"></span></label>
+    <label>Epost<input id="e-post" type="email" /><span id="e-post-1"></span></label>
+    <input type="submit" Value="Kjøp billett">
+</form>
+<h2>Alle billetter</h2>
+<ul id="billetter"></ul>
+<button onclick="slett()">Slett alle billettene</button>
+
 
 </body>
 </html>
