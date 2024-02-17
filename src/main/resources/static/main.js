@@ -27,13 +27,10 @@ function kjop() {
         let ut = ""
         // Sjekker om antallet er mindre eller lik null
         if ((verdi.id == "antall" && verdi.value <= 0) ||
-            // Sjekker om nummeret har en lengde på 8 siffer
-            (verdi.id == "nr" && verdi.value.length != 8
-                //RegEx sjekker at nummeret ikke begynner på 0
-                // og deretter etterfulgt av 7 sifre
-                && !verdi.value.match(/^[1-9]\d{7}/)) ||
             // Sjekker blant annet om e-posten ikke begynner på @
-            verdi.id == "e-post" && !verdi.value.match(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/)) {
+            (verdi.id == "e-post" && !verdi.value.match(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/)) ||
+            //RegEx sjekker at nummeret ikke begynner på 0 og deretter etterfulgt av 7 sifre
+            (verdi.id == "nr" && !verdi.value.match(/^[1-9]\d{7}/))) {
             ut = "Skriv inn gyldig " + verdi.id; // Utskriftsmelding for ugyldig felt
             feltFylt = false;
         }
